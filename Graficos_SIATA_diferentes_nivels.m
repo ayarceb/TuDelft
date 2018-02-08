@@ -31,7 +31,7 @@ for i=1:8760 -1
  
  end
 hold on 
-imshow('P1.png')
+
 end
 % plot(Station,'LineStyle','--','Color','k')
 
