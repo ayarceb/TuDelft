@@ -4,6 +4,12 @@ clear all
 close all
 clc
 
+% %===Station order==
+% 1'Station11' %     2'Station12' %    3 'Station25' %   4  'Station28' %    5 'Station3'
+%   6  'Station31'%    7 'Station37'%    8 'Station38' %    9 'Station4' %   10  'Station40'
+%   11  'Station41' %    12 'Station43' %    13 'Station44' %    14 'Station45' %   15  'Station46'
+%   16  'Station47' %    17 'Station48' %   18  'Station6'
+
 load Suffix
 Variable=cell(1,length(Suffix));
 % Variables of interest
@@ -45,10 +51,10 @@ A={[224/255 255/255 255/255],[204/255 255/255 255/255],[153/255 255/255 225/255]
 
 dates = datenum('January 1, 2017 0:00'):1/24:datenum('December 31, 2017 23:00');
 
-for i=1:4 -1
+for i=1:8760 -1
  for j=1:n
     if (0+(Particiones)*(j-1)<=Station(i) && Station(i)<Minimo_Station+Particiones*(j))
-      plot(dates(i),Station(i),'.','Color', A{j},'MarkerSize',10);
+      plot(dates(i),Station(i),'.','Color', A{j},'MarkerSize',14);
       ylim([0 250]);
       Taux=strcat('\textbf{',StationName{station},'-SIATA','}');
       TextYlabel=strcat('\textbf{',VarName{var},'(',VarUnits{var},')','}');
