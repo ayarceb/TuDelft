@@ -1,5 +1,5 @@
 % Script para visualizar una se;al de concentracion de gases en una paleta
-% de color hol11aaaaa
+% de color hol11aaaaa11111
 clear all
 close all
 clc
