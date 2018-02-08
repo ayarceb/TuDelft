@@ -1,5 +1,5 @@
 % Script para visualizar una se;al de concentracion de gases en una paleta
-% de color hol11aaaaa11111
+% de color 
 clear all
 close all
 clc
@@ -44,6 +44,7 @@ Minimo_Station=min(Station);
 Rango=Maximo_Station-Minimo_Station;
 n=18;
 Particiones=Rango/n;
+h2=plot(1,Station(1));
 
 j=1;
 % colorstring = 'gbyrk';
@@ -54,17 +55,22 @@ dates = datenum('January 1, 2017 0:00'):1/24:datenum('December 31, 2017 23:00');
 for i=1:8760 -1
  for j=1:n
     if (0+(Particiones)*(j-1)<=Station(i) && Station(i)<Minimo_Station+Particiones*(j))
-      plot(dates(i),Station(i),'.','Color', A{j},'MarkerSize',14);
-      ylim([0 250]);
+%       delete(h2)
+%       h2=plot(dates(i),Station(i),'Marker','o','MarkerSize',18,'Color','k');
+      plot(dates(i),Station(i),'.','Color', A{j},'MarkerSize',30);
+      
+     
+      hold on      
+      break
+    end
+  end
+end
+
+ dynamicDateTicks
+ylim([-5 250]);
       Taux=strcat('\textbf{',StationName{station},'-SIATA','}');
       TextYlabel=strcat('\textbf{',VarName{var},'(',VarUnits{var},')','}');
       title(Taux,TextProp,TextVal1)
       ylabel(TextYlabel,TextProp,TextVal2)
       xlabel('\textbf{Time}',TextProp,TextVal2) % x-axis label
       set(gca,AxesProp,AxesVal)
-      dynamicDateTicks
-      hold on      
-      break
-    end
-  end
-end
