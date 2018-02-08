@@ -1,5 +1,5 @@
 % Script para visualizar una se;al de concentracion de gases en una paleta
-% de color
+% de color hol11aaaaa
 clear all
 clc
 % Importa el vector a graficar
